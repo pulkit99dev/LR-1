@@ -2,7 +2,7 @@ import React from 'react';
 
 const CartItem = (props) =>{
     const {qty, title, price} = props.product;
-    const {product, increaseQty, decreaseQty} = props;
+    const {product, increaseQty, decreaseQty, deleteIt} = props;
     return(
         <div>
             <img style= {styles.image} src={product.img}/>
@@ -15,6 +15,9 @@ const CartItem = (props) =>{
             <img className='action-icons' 
                 src='https://www.flaticon.com/svg/vstatic/svg/753/753340.svg?token=exp=1611835307~hmac=d7c88d95c3947d387b43a9765ed4aca7' 
                 onClick={()=>decreaseQty(product)}></img>
+            <img className='action-icons' 
+                src='https://www.flaticon.com/svg/vstatic/svg/753/753340.svg?token=exp=1611835307~hmac=d7c88d95c3947d387b43a9765ed4aca7' 
+                onClick={()=>deleteIt(product.id)}></img>
         </div>
     )
 }

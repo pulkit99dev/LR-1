@@ -6,12 +6,13 @@ const Cart = (props) =>{
     const {products}= props;
     return(
     <div className='cart'>
-        <h1>Cart</h1>
+        
         {products.map((product)=>{
             return <CartItem 
                         product = {product}
                         increaseQty ={props.increasePrice}
                         decreaseQty ={props.decreasePrice}
+                        deleteIt={props.deleteProduct}
                     />
         })}
         
