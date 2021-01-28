@@ -6,7 +6,7 @@ import Navigation from './Navigation';
 class App extends Component {
 
   state={
-    products: []
+    
   }
 
   render(){
