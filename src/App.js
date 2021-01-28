@@ -125,7 +125,7 @@ class App extends Component {
 
   render(){
     console.log('rendered');
-    const{products} = this.state
+    const{products, loading} = this.state
   return (
     <div className="App">
       <Navbar count={this.counting()}/>
@@ -138,6 +138,7 @@ class App extends Component {
         deleteProduct={this.deleteItem}
         addProductItem={this.addProduct}
       />
+      {loading ? <h1>Loading...</h1> : null}
       <h3>Total Amount = {this.totalCount()}</h3>
     </div>
   );
