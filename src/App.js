@@ -9,8 +9,8 @@ class App extends Component {
   constructor(){
     super();
   this.state={
-    products=[],
-    loading=true
+    products:[],
+    loading: true
   }
   this.db = firebase.firestore();
   }
@@ -36,6 +36,11 @@ class App extends Component {
           loading: false
         })
       })
+  }
+
+  // Adding Qty
+  increaseQtyHandler =(product)=>{
+    const{products} = this.state;
   }
 
   render(){

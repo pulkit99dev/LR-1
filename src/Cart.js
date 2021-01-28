@@ -1,11 +1,18 @@
 import React from 'react';
-import classes from './Cart.module.css'
+import './Cart.css'
+import CartItem from './CartItem'
 
-const Cart = (props) =>(
-    <div className={classes.cart}>
+const Cart = (props) =>{
+    const {products}= props;
+    return(
+    <div className='cart'>
         <h1>Cart</h1>
-        {props.products}
+        {products.map((product)=>{
+            return <CartItem product = {product}/>
+        })}
+        
     </div>
-)
+    )
+}
 
 export default Cart;
