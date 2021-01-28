@@ -11,6 +11,7 @@ const Cart = (props) =>{
             return <CartItem 
                         product = {product}
                         increaseQty ={props.increasePrice}
+                        decreaseQty ={props.decreasePrice}
                     />
         })}
         
