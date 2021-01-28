@@ -41,6 +41,20 @@ class App extends Component {
   // Adding Qty
   increaseQtyHandler =(product)=>{
     const{products} = this.state;
+    const index = products.indexOf(product);
+
+    const docRef =this.db.collection('products').doc(products[index].id)
+    console.log(docRef)
+    docRef
+      .update({
+        qty: products[index].qty + 1
+      })
+      .then(()=>{
+        console.log('Updated')
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
   }
 
   render(){
@@ -49,7 +63,10 @@ class App extends Component {
   return (
     <div className="App">
       <Navigation />
-      <Cart products={products} />
+      <Cart 
+        products={products}
+        increasePrice={this.increaseQtyHandler}
+      />
     </div>
   );
 }

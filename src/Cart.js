@@ -8,7 +8,10 @@ const Cart = (props) =>{
     <div className='cart'>
         <h1>Cart</h1>
         {products.map((product)=>{
-            return <CartItem product = {product}/>
+            return <CartItem 
+                        product = {product}
+                        increaseQty ={props.increasePrice}
+                    />
         })}
         
     </div>
